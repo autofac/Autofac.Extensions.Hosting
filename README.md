@@ -9,6 +9,10 @@ Please file issues and pull requests for this package in this repository rather 
 - [NuGet](https://www.nuget.org/packages/Autofac.Extensions.Hosting)
 - [Contributing](https://autofac.readthedocs.io/en/latest/contributors.html)
 
+**This package is not officially published yet.**
+
+If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/autofac). As it is currently very small there is no value in publishing it yet. It may never be published. **YOU HAVE BEEN WARNED.**
+
 ## UseAutofac extension
 
 This quick start shows how to use the `IServiceProviderFactory{T}` integration that ASP.NET Core supports to help automatically build the root service provider for you. If you want more manual control, [check out the documentation for examples](https://autofac.readthedocs.io/en/latest/integration/aspnetcore.html).
