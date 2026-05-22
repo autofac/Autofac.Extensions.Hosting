@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <Description>Fluent configuration of Autofac with the Microsoft.Extensions.Hosting package.</Description>
-    <VersionPrefix>1.0.0</VersionPrefix>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
