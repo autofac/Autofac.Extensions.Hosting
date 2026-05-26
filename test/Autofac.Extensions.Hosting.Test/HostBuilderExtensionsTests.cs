@@ -1,12 +1,11 @@
-﻿// <copyright file="HostBuilderExtensionsTests.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
-namespace Autofac.Extensions.Hosting.Test;
+﻿// Copyright (c) Autofac Project. All rights reserved.
+// Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Xunit;
+
+namespace Autofac.Extensions.Hosting.Test;
 
 public sealed class HostBuilderExtensionsTests
 {
