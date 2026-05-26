@@ -1,43 +1,46 @@
-﻿using Autofac.Extensions.DependencyInjection;
+﻿// <copyright file="HostBuilderExtensionsTests.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace Autofac.Extensions.Hosting.Test;
+
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Xunit;
 
-namespace Autofac.Extensions.Hosting.Test
+public sealed class HostBuilderExtensionsTests
 {
-    public sealed class HostBuilderExtensionsTests
+    [Fact]
+    public void UseAutofacAutofacServiceProviderResolveable()
     {
-        [Fact]
-        public void UseAutofacAutofacServiceProviderResolveable()
-        {
-            var host = Host.CreateDefaultBuilder(null)
-                .UseAutofac()
-                .Build();
+        var host = Host.CreateDefaultBuilder(null)
+            .UseAutofac()
+            .Build();
 
-            Assert.IsAssignableFrom<AutofacServiceProvider>(host.Services);
-        }
-
-        [Fact]
-        public void UseAutofacChildScopeFactoryWithDelegateAutofacServiceProviderResolveable()
-        {
-            var host = Host.CreateDefaultBuilder(null)
-                .UseAutofacChildLifetimeScopeFactory(GetRootLifetimeScope)
-                .Build();
-
-            Assert.IsAssignableFrom<AutofacServiceProvider>(host.Services);
-        }
-
-        [Fact]
-        public void UseAutofacChildScopeFactoryWithInstanceAutofacServiceProviderResolveable()
-        {
-            var container = GetRootLifetimeScope();
-
-            var host = Host.CreateDefaultBuilder(null)
-                .UseAutofacChildLifetimeScopeFactory(container)
-                .Build();
-
-            Assert.IsAssignableFrom<AutofacServiceProvider>(host.Services);
-        }
-
-        private static IContainer GetRootLifetimeScope() => new ContainerBuilder().Build();
+        Assert.IsAssignableFrom<AutofacServiceProvider>(host.Services);
     }
+
+    [Fact]
+    public void UseAutofacChildScopeFactoryWithDelegateAutofacServiceProviderResolveable()
+    {
+        var host = Host.CreateDefaultBuilder(null)
+            .UseAutofacChildLifetimeScopeFactory(GetRootLifetimeScope)
+            .Build();
+
+        Assert.IsAssignableFrom<AutofacServiceProvider>(host.Services);
+    }
+
+    [Fact]
+    public void UseAutofacChildScopeFactoryWithInstanceAutofacServiceProviderResolveable()
+    {
+        var container = GetRootLifetimeScope();
+
+        var host = Host.CreateDefaultBuilder(null)
+            .UseAutofacChildLifetimeScopeFactory(container)
+            .Build();
+
+        Assert.IsAssignableFrom<AutofacServiceProvider>(host.Services);
+    }
+
+    private static IContainer GetRootLifetimeScope() => new ContainerBuilder().Build();
 }
