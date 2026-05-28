@@ -20,7 +20,14 @@ public static class HostBuilderExtensions
     /// <param name="configurationAction">Action on a <see cref="ContainerBuilder"/> that adds component registrations to the container.</param>
     /// <returns>The same instance of the <see cref="IHostBuilder" /> for chaining.</returns>
     public static IHostBuilder UseAutofac(this IHostBuilder hostBuilder, Action<ContainerBuilder> configurationAction = null)
-        => hostBuilder.UseServiceProviderFactory(new AutofacServiceProviderFactory(configurationAction));
+    {
+        if (hostBuilder is null)
+        {
+            throw new ArgumentNullException(nameof(hostBuilder));
+        }
+
+        return hostBuilder.UseServiceProviderFactory(new AutofacServiceProviderFactory(configurationAction));
+    }
 
     /// <summary>
     /// Use the <see cref="AutofacChildLifetimeScopeServiceProviderFactory" /> as the factory for creating the service provider.
@@ -30,8 +37,15 @@ public static class HostBuilderExtensions
     /// <param name="configurationAction">Action on a <see cref="ContainerBuilder"/> that adds component registrations to the container.</param>
     /// <returns>The same instance of the <see cref="IHostBuilder" /> for chaining.</returns>
     public static IHostBuilder UseAutofacChildLifetimeScopeFactory(this IHostBuilder hostBuilder, Func<IContainer> containerAccessor, Action<ContainerBuilder> configurationAction = null)
-        => hostBuilder.UseServiceProviderFactory(
+    {
+        if (hostBuilder is null)
+        {
+            throw new ArgumentNullException(nameof(hostBuilder));
+        }
+
+        return hostBuilder.UseServiceProviderFactory(
             new AutofacChildLifetimeScopeServiceProviderFactory(containerAccessor, configurationAction));
+    }
 
     /// <summary>
     /// Use the <see cref="AutofacChildLifetimeScopeServiceProviderFactory" /> as the factory for creating the service provider.
@@ -41,6 +55,13 @@ public static class HostBuilderExtensions
     /// <param name="configurationAction">Action on a <see cref="ContainerBuilder"/> that adds component registrations to the container.</param>
     /// <returns>The same instance of the <see cref="IHostBuilder" /> for chaining.</returns>
     public static IHostBuilder UseAutofacChildLifetimeScopeFactory(this IHostBuilder hostBuilder, IContainer container, Action<ContainerBuilder> configurationAction = null)
-        => hostBuilder.UseServiceProviderFactory(
+    {
+        if (hostBuilder is null)
+        {
+            throw new ArgumentNullException(nameof(hostBuilder));
+        }
+
+        return hostBuilder.UseServiceProviderFactory(
             new AutofacChildLifetimeScopeServiceProviderFactory(container, configurationAction));
+    }
 }
