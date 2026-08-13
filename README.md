@@ -1,17 +1,17 @@
 # Autofac.Extensions.Hosting
 
-Autofac is an [IoC container](http://martinfowler.com/articles/injection.html) for Microsoft .NET. It manages the dependencies between classes so that **applications stay easy to change as they grow** in size and complexity. This is achieved by treating regular .NET classes as *[components](https://autofac.readthedocs.io/en/latest/glossary.html)*.
+Autofac extensions that are useful in connecting the `Autofac.Extensions.DependencyInjection` package to .NET generic hosting.
 
-[![Build status](https://github.com/autofac/Autofac.Extensions.Hosting/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/autofac/Autofac.Extensions.Hosting/actions/workflows/ci.yml)
+> :warning: **This package is not officially published yet.**
+>
+> If you're feeling adventurous, you can consume beta packages from the GitHub packages feed. As it is currently very small there is no value in publishing it yet. It may never be published. **YOU HAVE BEEN WARNED.**
+
+[![Build status](https://github.com/autofac/Autofac.Extensions.Hosting/actions/workflows/main.yml/badge.svg)](https://github.com/autofac/Autofac.Extensions.Hosting/actions/workflows/main.yml) [![codecov](https://codecov.io/gh/Autofac/Autofac.Extensions.Hosting/branch/develop/graph/badge.svg)](https://codecov.io/gh/Autofac/Autofac.Extensions.Hosting) [![NuGet](https://img.shields.io/nuget/v/Autofac.Extensions.Hosting.svg)](https://nuget.org/packages/Autofac.Extensions.Hosting)
 
 Please file issues and pull requests for this package in this repository rather than in the Autofac core repo.
 
 - [NuGet](https://www.nuget.org/packages/Autofac.Extensions.Hosting)
 - [Contributing](https://autofac.readthedocs.io/en/latest/contributors.html)
-
-**This package is not officially published yet.**
-
-If you're feeling adventurous, [continuous integration builds are on MyGet](https://www.myget.org/gallery/autofac). As it is currently very small there is no value in publishing it yet. It may never be published. **YOU HAVE BEEN WARNED.**
 
 ## UseAutofac extension
 

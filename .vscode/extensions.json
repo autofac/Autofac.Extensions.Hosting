@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
+    "ms-dotnettools.csdevkit",
+    "travisillig.vscode-json-stable-stringify"
+  ]
+}

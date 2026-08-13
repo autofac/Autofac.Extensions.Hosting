@@ -3,14 +3,13 @@
 
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Xunit;
 
 namespace Autofac.Extensions.Hosting.Test;
 
 public sealed class HostBuilderExtensionsTests
 {
     [Fact]
-    public void UseAutofacAutofacServiceProviderResolveable()
+    public void UseAutofacAutofacServiceProviderResolvable()
     {
         var host = Host.CreateDefaultBuilder(null)
             .UseAutofac()
@@ -20,7 +19,7 @@ public sealed class HostBuilderExtensionsTests
     }
 
     [Fact]
-    public void UseAutofacChildScopeFactoryWithDelegateAutofacServiceProviderResolveable()
+    public void UseAutofacChildScopeFactoryWithDelegateAutofacServiceProviderResolvable()
     {
         var host = Host.CreateDefaultBuilder(null)
             .UseAutofacChildLifetimeScopeFactory(GetRootLifetimeScope)
@@ -30,7 +29,7 @@ public sealed class HostBuilderExtensionsTests
     }
 
     [Fact]
-    public void UseAutofacChildScopeFactoryWithInstanceAutofacServiceProviderResolveable()
+    public void UseAutofacChildScopeFactoryWithInstanceAutofacServiceProviderResolvable()
     {
         var container = GetRootLifetimeScope();
 
