@@ -1,6 +1,6 @@
 name: autofac.extensions.hosting
 version: 1.0.0
-description: AI agent instructions for Autofac.Extensions.Hosting, generated from autofac/.github by tools/Update-AiInstruction.ps1 there.
+description: AI agent instructions for Autofac.Extensions.Hosting.
 author: Autofac Project
 targets:
   - claude
